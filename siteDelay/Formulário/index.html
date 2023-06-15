@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Estabelecimento</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  </head>
+  <body>
+
+    <form onsubmit="return validarFormulario()" id="cadastroForm">
+      <label for="tipo-estabelecimento">Tipo de estabelecimento:</label>
+      <select id="tipo-estabelecimento" name="tipo-estabelecimento" onchange="exibirBeneficios()">
+        <option value="">Selecione</option>
+        <option value="posto-gasolina">Posto de gasolina</option>
+        <option value="posto-conveniencia">Posto de conveniencia</option>
+        <option value="posto-descarte">Posto de descarte eletrônico</option>
+        <option value="hospedagem">Hospedagem</option>
+        <option value="restaurante">Restaurante</option>
+      </select>
+
+      <div id="beneficios-container" style="display: none;">
+        <label>Benefícios:</label>
+          <div class="checkbox-container">
+            <input type="checkbox" id="wifi" name="wifi">
+            <label for="wifi">Wi-Fi</label>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="chuveiro" name="chuveiro">
+            <label for="chuveiro">Chuveiro</label>
+          </div>
+      </div>
+      
+      <!-- DADOS PESSOAIS --> 
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha">
+      
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone">
+      
+      <label for="cpnj">CNPJ:</label>
+      <input type="text" id="cpnj" name="cpnj">
+      
+      <label for="latitude">Latitude:</label>
+      <input type="text" id="latitude" name="latitude">
+      
+      <label for="longitude">Longitude:</label>
+      <input type="text" id="longitude" name="longitude">
+      
+      <button type="submit" id="cadastrarButton">Cadastrar</button>
+
+      <div class="termos-privacidade">
+        <input type="checkbox" id="aceite-termos" name="aceite-termos">
+        <label for="aceite-termos">Aceito os termos de privacidade</label><a href="caminho/para/o/arquivo.pdf" download>Baixar Termos de Privacidade (PDF)</a>
+      </div>
+
+    </form>
+
+  </body>
+</html>
